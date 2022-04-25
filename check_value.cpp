@@ -44,17 +44,6 @@ int main(int argc, char* argv[]) {
                 diff_param = true;
             }
         }
-//    }
-//    if (argc >= 2) {
-//        string arg1 = argv[1];
-//        if (argc == 3 && arg1 == "-max") {
-//            max = stoi(argv[2]);
-//        } else if (argc == 2 && arg1 == "-table"){
-//            print_hs();
-//            return 1;
-//        } else {
-//            max = 100;
-//        }
     }
 
 
@@ -80,7 +69,6 @@ int main(int argc, char* argv[]) {
             attempt_count++;
 		}
 		else {
-            not_win = false;
             save_and_print_hs(name, ++attempt_count);
 			break;
 		}

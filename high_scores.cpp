@@ -2,10 +2,12 @@
 #include <fstream>
 #include <string>
 #include "high_scores.h"
+#include <map>
 
 const std::string high_scores_filename = "high_scores.txt";
 
 void print_hs() {
+    map <std::string, int> best_scores;
     std::ifstream in_file{high_scores_filename};
     if (!in_file.is_open()) {
         std::cout << "Failed to open file for read: " << high_scores_filename << "!" << std::endl;
@@ -26,9 +28,20 @@ void print_hs() {
         if (in_file.fail()) {
             break;
         }
+        if (best_scores.count(username) == 0) {
+            best_scores.insert({username, high_score});
+        } else {
+            if (best_scores.at(username) > high_score) {
+                best_scores.at(username) = high_score;
+            }
+        }
 
         // Print the information to the screen
-        std::cout << username << '\t' << high_score << std::endl;
+        //std::cout << username << '\t' << high_score << std::endl;
+    }
+    cout << "Best score table:" << endl;
+    for (auto x : best_scores) {
+        cout << x.first << " " << x.second << endl;
     }
 }
 
