@@ -13,8 +13,6 @@ void print_hs() {
         std::cout << "Failed to open file for read: " << high_scores_filename << "!" << std::endl;
     }
 
-    std::cout << "High scores table:" << std::endl;
-
     std::string username;
     int high_score = 0;
     while (true) {
@@ -36,8 +34,6 @@ void print_hs() {
             }
         }
 
-        // Print the information to the screen
-        //std::cout << username << '\t' << high_score << std::endl;
     }
     cout << "Best score table:" << endl;
     for (auto x : best_scores) {
