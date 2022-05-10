@@ -8,4 +8,4 @@ add_executable(
 	random_value.cpp
 	random_value.h
 	high_scores.h
-	high_scores.cpp)
+	high_scores.cpp params_parse.cpp params_parse.h)
