@@ -14,14 +14,14 @@ void arg_parse(int argc, char* argv[], int& max)  {
             max = stoi(argv[i + 1]);
             if (diff_param) {
                 cout << "Too much diff settings!" << endl;
-                EXIT_FAILURE;
+                std::exit(1);
             } else {
                 diff_param = true;
             }
         }
         if (string{argv[i]} == "-table") {
             print_hs();
-            EXIT_SUCCESS;
+            std::exit(0);
         }
         if (string{argv[i]} == "-level") {
             lvl = stoi(argv[i+1]);
@@ -34,7 +34,7 @@ void arg_parse(int argc, char* argv[], int& max)  {
             }
             if (diff_param) {
                 cout << "Too much diff settings!" << endl;
-                EXIT_FAILURE;
+                std::exit(1);
             } else {
                 diff_param = true;
             }
